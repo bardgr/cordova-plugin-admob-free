@@ -17,4 +17,6 @@ final class Actions {
     static final String CREATE_REWARD_VIDEO = "createRewardVideo";
     static final String SHOW_REWARD_VIDEO = "showRewardVideo";
     static final String IS_REWARD_VIDEO_READY = "isRewardVideoReady";
+    static final String SET_APP_MUTED = "set_app_muted";
+    static final String SET_APP_VOLUME = "set_app_volume";
 }
