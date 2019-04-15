@@ -127,6 +127,18 @@ public class AdMob extends CordovaPlugin {
         } else if(Actions.IS_REWARD_VIDEO_READY.equals(action)) {
             result = rewardVideoExecutor.isReady(callbackContext);
 
+        }  else if (Actions.SET_APP_MUTED.equals(actionKey)) {
+            boolean value = args.optBoolean(0);
+            MobileAds.setAppMuted(value);
+            PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+            callbackContext.sendPluginResult(result);
+            return true;
+        } else if (Actions.SET_APP_VOLUME.equals(actionKey)) {
+            float value = BigDecimal.valueOf(args.optDouble(0)).floatValue();
+            MobileAds.setAppVolume(value);
+            PluginResult result = new PluginResult(PluginResult.Status.OK, "");
+            callbackContext.sendPluginResult(result);
+            return true;
         } else {
             Log.d(TAG, String.format("Invalid action passed: %s", action));
             result = new PluginResult(Status.INVALID_ACTION);
